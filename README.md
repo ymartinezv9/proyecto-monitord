@@ -46,13 +46,13 @@ El servicio se gestiona mediante systemctl. Los comandos principales son:
 ## Configuracion
 
 El archivo de configuracion se ubica en `/etc/monitord/config.conf`. Los parametros disponibles son:
-    1. Parametro Descripcion
-    2. intervalo_segundos Tiempo de espera entre cada medicion.
-    3. umbral_cpu Porcentaje limite de uso de CPU.    
-    4. umbral_mem	Porcentaje limite de uso de RAM.
-    5. cooldown_minutos	Tiempo minimo entre alertas del mismo tipo.
-    6. particion_disco Ruta de la particion a monitorear (ej. /).
-    7. Seguridad y Hardening
+1. Parametro Descripcion
+2. intervalo_segundos Tiempo de espera entre cada medicion.
+3. umbral_cpu Porcentaje limite de uso de CPU.    
+4. umbral_mem	Porcentaje limite de uso de RAM.
+5. cooldown_minutos	Tiempo minimo entre alertas del mismo tipo.
+6. particion_disco Ruta de la particion a monitorear (ej. /).
+7. Seguridad y Hardening
 
 Usuario del Sistema: El demonio corre bajo el usuario `monitord`, el cual carece de shell y privilegios de administracion.
 Restriccion de Escritura: Gracias a la directiva ProtectSystem=strict, el servicio solo tiene permiso de escritura en su directorio de logs.
