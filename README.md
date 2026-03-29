@@ -35,13 +35,22 @@ El sistema requiere Python 3 y la libreria psutil. El script de instalacion gest
 1. Clonar el repositorio o descargar los archivos.
 2. Otorgar permisos de ejecucion al script de instalacion: `chmod +x scripts/install.sh`
 3. Ejecutar el instalador con privilegios de superusuario: `sudo ./scripts/install.sh`
+<img width="970" height="414" alt="Screenshot from 2026-03-28 22-07-56" src="https://github.com/user-attachments/assets/e0e97814-db84-4aa4-86d7-722a1bd8af48" />
+
+
 
 ### Administracion del Servicio
 El servicio se gestiona mediante systemctl. Los comandos principales son:
-1. Ver estado: systemctl `status monitord`
+1. Ver estado: `systemctl status monitord`
 2. Ver registros (logs): `tail -f /var/log/monitord/monitord.log`
 3. Recargar configuracion: `sudo systemctl reload monitord`
 4. Detener servicio: `sudo systemctl stop monitord`
+
+<img width="823" height="725" alt="Screenshot from 2026-03-28 22-09-05" src="https://github.com/user-attachments/assets/3763d697-3df2-4304-a4ca-e65b3eef7efc" />
+
+
+<img width="824" height="738" alt="Screenshot from 2026-03-28 22-09-51" src="https://github.com/user-attachments/assets/2c011a0b-6c07-4f01-9270-cae9f36219e6" />
+
 
 ## Configuracion
 
