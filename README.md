@@ -25,40 +25,40 @@ proyecto-monitord/
 └── README.md               # Documentación del proyecto
 ```
 
-##Instalacion y Despliegue
+## Instalacion y Despliegue
 
-###Requisitos
+### Requisitos
 
 El sistema requiere Python 3 y la libreria psutil. El script de instalacion gestionara las dependencias automaticamente en sistemas basados en Debian/Ubuntu.
 
-###Proceso de Instalacion
+### Proceso de Instalacion
 1. Clonar el repositorio o descargar los archivos.
-2. Otorgar permisos de ejecucion al script de instalacion: chmod +x scripts/install.sh
-3. Ejecutar el instalador con privilegios de superusuario: sudo ./scripts/install.sh
+2. Otorgar permisos de ejecucion al script de instalacion: `chmod +x scripts/install.sh`
+3. Ejecutar el instalador con privilegios de superusuario: `sudo ./scripts/install.sh`
 
-###Administracion del Servicio
+### Administracion del Servicio
 El servicio se gestiona mediante systemctl. Los comandos principales son:
-1. Ver estado: systemctl status monitord
-2. Ver registros (logs): tail -f /var/log/monitord/monitord.log
-3. Recargar configuracion: sudo systemctl reload monitord
-4. Detener servicio: sudo systemctl stop monitord
+1. Ver estado: systemctl `status monitord`
+2. Ver registros (logs): `tail -f /var/log/monitord/monitord.log`
+3. Recargar configuracion: `sudo systemctl reload monitord`
+4. Detener servicio: `sudo systemctl stop monitord`
 
-##Configuracion
+## Configuracion
 
-El archivo de configuracion se ubica en /etc/monitord/config.conf. Los parametros disponibles son:
-1. Parametro Descripcion
-2. intervalo_segundos Tiempo de espera entre cada medicion.
-3. umbral_cpu Porcentaje limite de uso de CPU.
-4. umbral_mem	Porcentaje limite de uso de RAM.
-5. cooldown_minutos	Tiempo minimo entre alertas del mismo tipo.
-6. particion_disco Ruta de la particion a monitorear (ej. /).
-7. Seguridad y Hardening
+El archivo de configuracion se ubica en `/etc/monitord/config.conf`. Los parametros disponibles son:
+    1. Parametro Descripcion
+    2. intervalo_segundos Tiempo de espera entre cada medicion.
+    3. umbral_cpu Porcentaje limite de uso de CPU.    
+    4. umbral_mem	Porcentaje limite de uso de RAM.
+    5. cooldown_minutos	Tiempo minimo entre alertas del mismo tipo.
+    6. particion_disco Ruta de la particion a monitorear (ej. /).
+    7. Seguridad y Hardening
 
-    Usuario del Sistema: El demonio corre bajo el usuario 'monitord', el cual carece de shell y privilegios de administracion.
-    Restriccion de Escritura: Gracias a la directiva ProtectSystem=strict, el servicio solo tiene permiso de escritura en su directorio de logs.
-    Control de Procesos: Se utiliza NoNewPrivileges=true para evitar que el proceso obtenga privilegios adicionales durante su ejecucion.
+Usuario del Sistema: El demonio corre bajo el usuario `monitord`, el cual carece de shell y privilegios de administracion.
+Restriccion de Escritura: Gracias a la directiva ProtectSystem=strict, el servicio solo tiene permiso de escritura en su directorio de logs.
+Control de Procesos: Se utiliza `NoNewPrivileges=true` para evitar que el proceso obtenga privilegios adicionales durante su ejecucion.
 
-##Desinstalacion
+## Desinstalacion
 
-Para eliminar el servicio y limpiar los archivos del sistema: sudo ./scripts/uninstall.sh
+Para eliminar el servicio y limpiar los archivos del sistema: `sudo ./scripts/uninstall.sh`
 
